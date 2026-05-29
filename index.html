@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPH Collective — Private Infrastructure for Complex Work</title>
+<meta name="description" content="A structured coordination layer for teams, operators and partners working across high-value projects. Montreal, New York, Miami.">
+
+<!-- ============ SHARE / SOCIAL METADATA ============ -->
+<!-- IMPORTANT: replace https://bphcollective.com with your real domain once live -->
+<link rel="canonical" href="https://bphcollective.com/">
+<meta name="theme-color" content="#0A0A0A">
+
+<!-- Open Graph (LinkedIn, Facebook, iMessage, WhatsApp, most platforms) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BPH Collective">
+<meta property="og:url" content="https://bphcollective.com/">
+<meta property="og:title" content="BPH Collective — Private Infrastructure for Complex Work">
+<meta property="og:description" content="A private coordination layer for serious operators. Where field execution meets legal structure. Montréal · New York · Miami.">
+<meta property="og:image" content="https://bphcollective.com/og-image.png">
+<meta property="og:image:secure_url" content="https://bphcollective.com/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BPH Collective — Private infrastructure for complex work.">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BPH Collective — Private Infrastructure for Complex Work">
+<meta name="twitter:description" content="A private coordination layer for serious operators. Montréal · New York · Miami.">
+<meta name="twitter:image" content="https://bphcollective.com/og-image.png">
+<meta name="twitter:image:alt" content="BPH Collective — Private infrastructure for complex work.">
+<!-- ================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0A0A' stroke='rgba(255,255,255,0.08)'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Helvetica,Arial' font-size='26' font-weight='600' fill='%23F3F1EA'%3EB%3C/text%3E%3Ccircle cx='49' cy='17' r='2.4' fill='%232D6CDF'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --black:#0A0A0A;--near:#0E0E0E;--graphite:#141414;
+    --white:#F3F1EA;--grey:#A7A7A7;--faint:#5C5C5C;
+    --hair:rgba(255,255,255,0.05);--hair-2:rgba(255,255,255,0.09);--hair-bright:rgba(255,255,255,0.16);
+    --panel:rgba(255,255,255,0.018);--panel-hover:rgba(255,255,255,0.035);
+    --accent:#2D6CDF;--accent-soft:#6E9BEC;--accent-glow:rgba(45,108,223,0.10);--gold:#BFA46A;
+    --maxw:1200px;--ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter','Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--black);color:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;letter-spacing:-0.01em}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(1000px 700px at 80% -8%,rgba(45,108,223,0.09),transparent 60%),radial-gradient(800px 600px at 5% 30%,rgba(45,108,223,0.04),transparent 55%),radial-gradient(1000px 900px at 50% 115%,rgba(30,45,80,0.06),transparent 60%)}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.02;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E")}
+  .wrap{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:0 40px}
+  header{position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid transparent;transition:background .5s var(--ease),border-color .5s var(--ease)}
+  header.scrolled{background:rgba(10,10,10,0.7);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);border-bottom:1px solid var(--hair)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:82px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+  .brand .mark{position:relative;width:32px;height:32px;border-radius:8px;border:1px solid var(--hair-bright);display:grid;place-items:center;background:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01));font-size:14px;font-weight:600}
+  .brand .mark::after{content:'';position:absolute;top:6px;right:6px;width:3.2px;height:3.2px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent)}
+  .brand .name{font-weight:600;font-size:15px;letter-spacing:0.08em}
+  .brand .name span{color:var(--grey);font-weight:400}
+  nav ul{display:flex;gap:44px;list-style:none}
+  nav ul a{color:var(--grey);text-decoration:none;font-size:13px;font-weight:450;letter-spacing:0.06em;text-transform:uppercase;transition:color .25s var(--ease);position:relative}
+  nav ul a::after{content:'';position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--accent);transition:width .3s var(--ease)}
+  nav ul a:hover{color:var(--white)}
+  nav ul a:hover::after{width:100%}
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px}
+  .menu-btn span{width:24px;height:1.5px;background:var(--white);display:block}
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:82px;position:relative}
+  .hero-grid{position:absolute;inset:0;z-index:0;opacity:0.45;background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(circle at 72% 40%,black,transparent 72%);-webkit-mask-image:radial-gradient(circle at 72% 40%,black,transparent 72%)}
+  .hero-inner{position:relative;z-index:1;max-width:880px;padding:80px 0}
+  .lockup{margin-bottom:56px}
+  .lockup svg{display:block}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey);border:1px solid var(--hair-2);border-radius:100px;padding:8px 18px;margin-bottom:40px;background:var(--panel);backdrop-filter:blur(8px)}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);animation:pulse 2.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  h1{font-size:clamp(2.7rem,6.4vw,5.4rem);font-weight:600;line-height:1.0;letter-spacing:-0.04em;background:linear-gradient(180deg,#ffffff 28%,#9ba0a8 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.sub{font-size:clamp(1.05rem,1.8vw,1.34rem);color:var(--grey);font-weight:300;max-width:660px;margin-top:34px;line-height:1.6}
+  .hero p.mission{font-size:clamp(1.15rem,2vw,1.5rem);color:var(--white);font-weight:400;margin-top:28px;letter-spacing:0.01em;position:relative;padding-left:20px}
+  .hero p.mission::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:2px;background:var(--accent);box-shadow:0 0 10px var(--accent-glow)}
+  .cta-row{display:flex;gap:16px;margin-top:52px;flex-wrap:wrap}
+  .btn{font-family:inherit;font-size:14px;font-weight:500;letter-spacing:0.03em;padding:16px 32px;border-radius:10px;text-decoration:none;cursor:pointer;transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:10px}
+  .btn-primary{background:var(--white);color:var(--black);border:1px solid var(--white)}
+  .btn-primary:hover{background:transparent;color:var(--white);transform:translateY(-2px)}
+  .btn-ghost{background:var(--panel);color:var(--white);border:1px solid var(--hair-bright);backdrop-filter:blur(8px)}
+  .btn-ghost:hover{background:var(--panel-hover);transform:translateY(-2px);border-color:var(--grey)}
+  .btn .arrow{transition:transform .3s var(--ease)}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .geo{display:flex;gap:32px;margin-top:64px;flex-wrap:wrap}
+  .geo .g{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint)}
+  .geo .g b{color:var(--grey);font-weight:500}
+  section{padding:160px 0;position:relative}
+  .label{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:16px;margin-bottom:36px}
+  .label::before{content:'';width:32px;height:1px;background:var(--hair-bright)}
+  .h2{font-size:clamp(2rem,3.9vw,3.2rem);font-weight:600;letter-spacing:-0.035em;line-height:1.1;max-width:860px}
+  .h2 span{color:var(--grey)}
+  .lede{font-size:clamp(1.05rem,1.5vw,1.28rem);color:var(--grey);font-weight:300;max-width:720px;margin-top:30px;line-height:1.7}
+  .visual{position:relative;height:78vh;min-height:520px;max-height:760px;display:flex;align-items:flex-end;overflow:hidden;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);background:linear-gradient(180deg,rgba(10,10,10,0.2) 0%,rgba(10,10,10,0.55) 55%,rgba(10,10,10,0.92) 100%),linear-gradient(115deg,#1a1c1f 0%,#0e0f11 45%,#202327 100%);background-size:cover;background-position:center}
+  .visual .bg{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;filter:grayscale(0.35) contrast(1.05) brightness(0.62);transform:scale(1.06);transition:transform 1.4s var(--ease)}
+  .visual:hover .bg{transform:scale(1.0)}
+  .visual::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,0.25) 0%,rgba(10,10,10,0.4) 50%,rgba(10,10,10,0.94) 100%)}
+  .visual::after{content:'';position:absolute;inset:0;z-index:1;background:radial-gradient(900px 500px at 80% 10%,var(--accent-glow),transparent 65%)}
+  .visual .wrap{position:relative;z-index:2;width:100%;padding-bottom:72px}
+  .visual .v-tag{font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--grey);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+  .visual .v-tag::before{content:'';width:32px;height:1px;background:var(--hair-bright)}
+  .visual .v-title{font-size:clamp(1.8rem,3.6vw,2.9rem);font-weight:600;letter-spacing:-0.035em;line-height:1.1;max-width:640px}
+  .visual .v-sub{font-size:1.05rem;color:var(--grey);font-weight:300;max-width:520px;margin-top:20px}
+  .vision-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:80px;background:var(--hair);border:1px solid var(--hair);border-radius:16px;overflow:hidden}
+  .stat{background:var(--near);padding:44px 38px}
+  .stat .n{font-size:1.35rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:14px}
+  .stat .d{font-size:14px;color:var(--grey);font-weight:300;line-height:1.6}
+  .grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:72px}
+  .card{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:48px 42px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);backdrop-filter:blur(10px)}
+  .card::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,rgba(110,155,236,0.38),transparent 42%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s var(--ease)}
+  .card:hover{transform:translateY(-5px);background:var(--panel-hover);border-color:var(--hair-2)}
+  .card:hover::before{opacity:1}
+  .card .idx{font-size:12px;color:var(--faint);letter-spacing:0.14em;margin-bottom:28px}
+  .card .ic{width:48px;height:48px;border-radius:12px;border:1px solid var(--hair-bright);display:grid;place-items:center;margin-bottom:28px;color:var(--accent-soft);background:linear-gradient(145deg,rgba(255,255,255,0.05),transparent)}
+  .card h3{font-size:1.3rem;font-weight:600;letter-spacing:-0.02em;margin-bottom:16px}
+  .card p{font-size:14.5px;color:var(--grey);font-weight:300;line-height:1.7}
+  .core-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:72px}
+  .pillar{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:48px 40px;overflow:hidden;transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);backdrop-filter:blur(10px)}
+  .pillar::before{content:'';position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,rgba(110,155,236,0.4),transparent 45%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s var(--ease)}
+  .pillar:hover{transform:translateY(-5px);background:var(--panel-hover);border-color:var(--hair-2)}
+  .pillar:hover::before{opacity:1}
+  .pillar .p-no{font-size:12px;color:var(--faint);letter-spacing:0.16em;margin-bottom:30px}
+  .pillar .p-name{font-size:1.5rem;font-weight:600;letter-spacing:-0.025em}
+  .pillar .p-person{font-size:13px;color:var(--accent-soft);font-weight:500;letter-spacing:0.04em;margin-top:8px}
+  .pillar .p-line{font-size:15px;color:var(--white);font-weight:400;line-height:1.55;margin-top:24px}
+  .pillar .p-desc{font-size:14px;color:var(--grey);font-weight:300;line-height:1.7;margin-top:16px;border-top:1px solid var(--hair);padding-top:18px}
+  .origin{position:relative}
+  .origin-inner{max-width:760px;margin:0 auto;text-align:center}
+  .origin .o-quote{font-size:clamp(1.4rem,2.8vw,2.05rem);font-weight:500;letter-spacing:-0.02em;line-height:1.4;background:linear-gradient(180deg,#fff,#9ba0a8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .origin .o-body{font-size:1.08rem;color:var(--grey);font-weight:300;line-height:1.8;margin-top:32px}
+  .origin .o-sign{margin-top:36px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--faint)}
+  @media(max-width:880px){.core-grid{grid-template-columns:1fr}}
+  .caps{display:flex;flex-direction:column;margin-top:64px;border-top:1px solid var(--hair)}
+  .cap{position:relative;display:grid;grid-template-columns:64px 1fr auto;gap:36px;align-items:flex-start;padding:42px 8px;border-bottom:1px solid var(--hair);transition:background .4s var(--ease),padding-left .4s var(--ease)}
+  .cap:hover{background:var(--panel);padding-left:24px}
+  .cap .c-no{font-size:13px;color:var(--faint);letter-spacing:0.12em;padding-top:6px}
+  .cap .c-main h3{font-size:clamp(1.25rem,2.3vw,1.7rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2}
+  .cap .c-main p{font-size:14.5px;color:var(--grey);font-weight:300;line-height:1.7;margin-top:14px;max-width:640px}
+  .cap .c-domain{font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-soft);white-space:nowrap;padding-top:8px}
+  .caps-note{margin-top:40px;font-size:13px;color:var(--faint);font-weight:300;letter-spacing:0.02em;display:flex;align-items:center;gap:12px}
+  .caps-note::before{content:'';width:24px;height:1px;background:var(--hair-bright)}
+  @media(max-width:760px){.cap{grid-template-columns:1fr;gap:14px}.cap .c-no{padding-top:0}.cap .c-domain{padding-top:0}}
+  .story{text-align:center;padding:200px 0}
+  .story .big{font-size:clamp(2.6rem,6.4vw,5rem);font-weight:600;letter-spacing:-0.045em;line-height:1.04;background:linear-gradient(180deg,#fff,#74787f);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .story p{max-width:620px;margin:40px auto 0;color:var(--grey);font-weight:300;font-size:1.12rem}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:72px}
+  .partner{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:44px 38px;backdrop-filter:blur(10px);transition:all .4s var(--ease)}
+  .partner:hover{border-color:var(--hair-2);background:var(--panel-hover);transform:translateY(-5px)}
+  .avatar{width:84px;height:84px;border-radius:50%;overflow:hidden;display:grid;place-items:center;font-size:1.5rem;font-weight:600;color:var(--white);margin-bottom:28px;border:1px solid var(--hair-bright);background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.01))}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(0.25) contrast(1.03)}
+  .partner h3{font-size:1.35rem;font-weight:600;letter-spacing:-0.02em}
+  .partner .role{font-size:13px;color:var(--accent-soft);font-weight:500;letter-spacing:0.03em;margin-top:8px}
+  .partner .bio{font-size:14px;color:var(--grey);font-weight:300;line-height:1.7;margin-top:22px;border-top:1px solid var(--hair);padding-top:22px}
+  .fields-wrap{margin-top:64px;display:flex;flex-wrap:wrap;gap:14px}
+  .chip{border:1px solid var(--hair-2);border-radius:100px;padding:14px 28px;font-size:14.5px;color:var(--grey);font-weight:400;background:var(--panel);backdrop-filter:blur(8px);transition:all .3s var(--ease)}
+  .chip:hover{color:var(--white);border-color:var(--hair-bright);transform:translateY(-2px)}
+  .cta{position:relative;border:1px solid var(--hair-2);border-radius:28px;overflow:hidden;padding:120px 60px;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,0.035),rgba(255,255,255,0.004))}
+  .cta::before{content:'';position:absolute;inset:0;z-index:0;background:radial-gradient(700px 480px at 50% 0%,var(--accent-glow),transparent 70%)}
+  .cta-inner{position:relative;z-index:1}
+  .cta h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:600;letter-spacing:-0.035em;line-height:1.1}
+  .cta p{color:var(--grey);font-weight:300;margin:26px auto 0;max-width:520px;font-size:1.08rem}
+  .cta .cta-row{justify-content:center;margin-top:48px}
+  footer{border-top:1px solid var(--hair);padding:80px 0 64px;position:relative;z-index:1}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:48px}
+  .foot-brand .brand{margin-bottom:22px}
+  .foot-status{font-size:13px;color:var(--faint);display:flex;align-items:center;gap:10px;margin-bottom:24px}
+  .foot-status .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+  .foot-loc{font-size:13px;color:var(--faint);letter-spacing:0.08em}
+  .foot-loc b{color:var(--grey);font-weight:500}
+  .foot-right{text-align:right}
+  .foot-right a{color:var(--grey);text-decoration:none;font-size:14.5px;transition:color .3s}
+  .foot-right a:hover{color:var(--white)}
+  .foot-copy{font-size:12.5px;color:var(--faint);margin-top:14px}
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* APPLY MODAL — tunnel */
+  .modal-root{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
+  .modal-root.open{display:flex}
+  .modal-veil{position:absolute;inset:0;background:rgba(5,5,5,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity .5s var(--ease)}
+  .modal-root.open .modal-veil{opacity:1}
+  .modal{position:relative;z-index:1;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;-webkit-overflow-scrolling:touch;background:linear-gradient(165deg,#121316 0%,#0b0b0d 100%);border:1px solid var(--hair-2);border-radius:24px;padding:48px 44px;transform:translateY(24px) scale(.98);opacity:0;transition:transform .55s var(--ease),opacity .55s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,0.6)}
+  .modal-root.open .modal{transform:none;opacity:1}
+  .modal::before{content:'';position:absolute;inset:0;border-radius:24px;background:radial-gradient(500px 300px at 80% -10%,var(--accent-glow),transparent 65%);pointer-events:none}
+  .modal-close{position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;border:1px solid var(--hair-2);background:var(--panel);color:var(--grey);font-size:18px;cursor:pointer;display:grid;place-items:center;transition:all .3s var(--ease);z-index:2}
+  .modal-close:hover{color:var(--white);border-color:var(--hair-bright);background:var(--panel-hover)}
+  .modal .m-eyebrow{font-size:11.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent-soft);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .modal .m-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .modal h2{font-size:clamp(1.6rem,5vw,2rem);font-weight:600;letter-spacing:-0.03em;line-height:1.1}
+  .modal .m-sub{font-size:14.5px;color:var(--grey);font-weight:300;line-height:1.6;margin-top:14px;position:relative}
+  .m-field{margin-top:28px;position:relative}
+  .m-field label{display:block;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--grey);margin-bottom:12px;font-weight:500}
+  .m-field label .req{color:var(--accent-soft)}
+  .m-field input,.m-field textarea{width:100%;background:rgba(255,255,255,0.025);border:1px solid var(--hair-2);border-radius:11px;padding:15px 16px;color:var(--white);font-family:inherit;font-size:16px;font-weight:400;letter-spacing:-0.01em;transition:border-color .3s var(--ease),background .3s var(--ease);outline:none}
+  .m-field input::placeholder,.m-field textarea::placeholder{color:var(--faint)}
+  .m-field input:focus,.m-field textarea:focus{border-color:var(--accent);background:rgba(45,108,223,0.06)}
+  .m-field textarea{resize:none;min-height:84px;line-height:1.6}
+  .m-choices{display:grid;grid-template-columns:1fr;gap:10px}
+  .m-choice{position:relative;display:flex;align-items:center;gap:14px;padding:15px 18px;border:1px solid var(--hair-2);border-radius:11px;cursor:pointer;transition:all .3s var(--ease);background:rgba(255,255,255,0.012)}
+  .m-choice:hover{border-color:var(--hair-bright);background:var(--panel-hover)}
+  .m-choice input{position:absolute;opacity:0;pointer-events:none}
+  .m-choice .tick{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--faint);flex-shrink:0;transition:all .3s var(--ease);position:relative}
+  .m-choice .tick::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .25s var(--ease)}
+  .m-choice .c-label{font-size:14.5px;color:var(--grey);font-weight:400;transition:color .3s}
+  .m-choice .c-label b{display:block;font-size:12px;color:var(--faint);font-weight:400;margin-top:3px;letter-spacing:0.02em}
+  .m-choice input:checked ~ .tick{border-color:var(--accent);box-shadow:0 0 10px var(--accent-glow)}
+  .m-choice input:checked ~ .tick::after{transform:scale(1)}
+  .m-choice:has(input:checked){border-color:var(--accent);background:rgba(45,108,223,0.07)}
+  .m-choice:has(input:checked) .c-label{color:var(--white)}
+  .m-submit{width:100%;margin-top:32px;background:var(--white);color:var(--black);border:1px solid var(--white);border-radius:11px;padding:17px;font-family:inherit;font-size:15px;font-weight:600;letter-spacing:0.02em;cursor:pointer;transition:all .3s var(--ease);display:flex;align-items:center;justify-content:center;gap:10px}
+  .m-submit:hover{background:transparent;color:var(--white)}
+  .m-submit .arrow{transition:transform .3s var(--ease)}
+  .m-submit:hover .arrow{transform:translateX(4px)}
+  .m-foot{margin-top:18px;font-size:12px;color:var(--faint);font-weight:300;text-align:center;line-height:1.5}
+  .m-error{color:#E0826A;font-size:12.5px;margin-top:14px;display:none}
+  .m-error.show{display:block}
+  /* success state */
+  .m-success{display:none;text-align:center;padding:20px 0}
+  .m-success.show{display:block}
+  .m-success .s-ring{width:64px;height:64px;margin:0 auto 28px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent-soft);box-shadow:0 0 30px var(--accent-glow)}
+  .m-success h2{margin-bottom:14px}
+  .m-success p{font-size:14.5px;color:var(--grey);font-weight:300;line-height:1.7;max-width:400px;margin:0 auto}
+  .m-step{font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);margin-top:30px;text-align:center}
+  .m-step b{color:var(--accent-soft);font-weight:500}
+
+  @media(max-width:880px){
+    nav ul{display:none}.menu-btn{display:flex}
+    nav ul.open{display:flex;flex-direction:column;position:absolute;top:82px;left:0;right:0;background:rgba(10,10,10,0.97);backdrop-filter:blur(20px);padding:32px;gap:26px;border-bottom:1px solid var(--hair)}
+    .grid-4,.grid-3,.core-grid,.vision-stats{grid-template-columns:1fr}
+    section{padding:100px 0}.story{padding:130px 0}
+    .visual{height:64vh;min-height:420px}
+    .cta{padding:72px 32px;border-radius:20px}
+    .foot-grid{flex-direction:column}.foot-right{text-align:left}
+    .wrap{padding:0 24px}.card{padding:38px 32px}
+  }
+  /* MOBILE FIRST refinements — Instagram/LinkedIn traffic */
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    .nav{height:70px}
+    header.scrolled{background:rgba(10,10,10,0.85)}
+    .hero{padding-top:70px;min-height:auto}
+    .hero-inner{padding:56px 0 72px}
+    .lockup{margin-bottom:40px}
+    .lockup svg{width:170px;height:auto}
+    .eyebrow{margin-bottom:28px;font-size:11px;padding:7px 14px}
+    h1{font-size:clamp(2.3rem,11vw,3rem);line-height:1.04}
+    .hero p.mission{font-size:1.2rem;margin-top:22px;padding-left:16px}
+    .hero p.sub{font-size:1.02rem;margin-top:24px}
+    .cta-row{margin-top:36px;flex-direction:column}
+    .btn{width:100%;justify-content:center;padding:17px 28px;font-size:15px}
+    .geo{gap:18px 28px;margin-top:44px}
+    section{padding:76px 0}
+    .label{margin-bottom:26px;font-size:11px;letter-spacing:0.18em}
+    .h2{font-size:clamp(1.7rem,7vw,2.2rem)}
+    .lede{font-size:1.05rem;margin-top:24px}
+    .core-grid,.grid-4,.grid-3{margin-top:44px;gap:14px}
+    .pillar{padding:36px 28px}
+    .pillar .p-name{font-size:1.35rem}
+    .card{padding:34px 28px}
+    .vision-stats{margin-top:48px}
+    .stat{padding:34px 28px}
+    .cap{padding:32px 4px}
+    .cap:hover{padding-left:4px}
+    .caps{margin-top:44px}
+    .story{padding:100px 0}
+    .origin-inner .o-quote{font-size:1.5rem}
+    .origin .o-body{font-size:1.02rem;margin-top:26px}
+    .partner{padding:36px 30px}
+    .fields-wrap{margin-top:40px;gap:10px}
+    .chip{padding:12px 22px;font-size:14px}
+    .cta{padding:56px 26px;border-radius:18px}
+    .cta h2{font-size:clamp(1.7rem,8vw,2.3rem)}
+    /* modal full-bleed bottom-sheet feel on phones */
+    .modal-root{padding:0;align-items:flex-end}
+    .modal{max-width:none;max-height:94vh;border-radius:22px 22px 0 0;padding:40px 26px 36px;transform:translateY(100%);border-bottom:none}
+    .modal-root.open .modal{transform:none}
+    .modal h2{font-size:1.55rem}
+    .m-field{margin-top:24px}
+  }
+  @media(max-width:520px){.cta-row{flex-direction:column}.btn{justify-content:center;width:100%}.hero-inner{padding:48px 0}}
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="wrap"><div class="nav">
+    <a href="#top" class="brand"><span class="mark">B</span><span class="name">BPH<span> Collective</span></span></a>
+    <nav><ul id="menu">
+      <li><a href="#core">The Core</a></li>
+      <li><a href="#capabilities">Track Record</a></li>
+      <li><a href="#origin">Story</a></li>
+      <li><a href="#access">Access</a></li>
+    </ul></nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <div class="wrap"><div class="hero-inner">
+    <div class="lockup reveal">
+      <svg width="210" height="120" viewBox="0 0 210 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BPH Collective">
+        <text x="0" y="54" font-family="'Inter','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="46" font-weight="600" letter-spacing="4" fill="#F3F1EA">BPH</text>
+        <circle cx="156" cy="22" r="2.6" fill="#2D6CDF"/>
+        <line x1="2" y1="74" x2="146" y2="74" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+        <text x="2" y="95" font-family="'Inter','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="11.5" font-weight="500" letter-spacing="10" fill="#F3F1EA">COLLECTIVE</text>
+      </svg>
+    </div>
+    <div class="eyebrow reveal"><span class="dot"></span> Private network &middot; In development</div>
+    <h1 class="reveal">Private infrastructure<br>for complex work.</h1>
+    <p class="mission reveal">The work behind the work.</p>
+    <p class="sub reveal">A coordination layer for serious operators. Where field execution meets legal structure. Where contracts hold, materials move, and disputes get closed before they cost you the project.</p>
+    <div class="cta-row reveal">
+      <a href="#access" class="btn btn-primary" data-apply>Request private access <span class="arrow">&rarr;</span></a>
+      <a href="#framework" class="btn btn-ghost">View framework</a>
+    </div>
+    <div class="geo reveal">
+      <span class="g">HQ <b>Montr&eacute;al</b></span>
+      <span class="g"><b>New York</b></span>
+      <span class="g"><b>Miami</b></span>
+      <span class="g">Operations <b>Global</b></span>
+    </div>
+  </div></div>
+</section>
+
+<div class="visual" id="visual-1">
+  <div class="bg" data-src="https://images.unsplash.com/photo-1496588152823-86ff7695e68f?auto=format&fit=crop&w=2000&q=80"></div>
+  <div class="wrap reveal">
+    <div class="v-tag">Vantage</div>
+    <div class="v-title">The view from the work most people never see.</div>
+    <div class="v-sub">High above the noise &mdash; where the decisions that move a project actually get made.</div>
+  </div>
+</div>
+
+<section class="core" id="core">
+  <div class="wrap">
+    <div class="label reveal">The Core</div>
+    <h2 class="h2 reveal">Three forces. One table.</h2>
+    <p class="lede reveal">BPH Collective runs on three disciplines that rarely sit in the same room &mdash; legal, operational and strategic. Here, they do.</p>
+    <div class="core-grid">
+      <div class="pillar reveal">
+        <div class="p-no">01</div>
+        <div class="p-name">Legal Architecture</div>
+        <div class="p-person">Hubert</div>
+        <div class="p-line">Structure that holds when the deal gets hard.</div>
+        <div class="p-desc">Construction litigation and dispute resolution. Turns conflict into a clean, secured commercial position &mdash; and reads where a market reshaped by AI is heading before it gets there.</div>
+      </div>
+      <div class="pillar reveal">
+        <div class="p-no">02</div>
+        <div class="p-name">Infrastructure &amp; Execution</div>
+        <div class="p-person">Patrick</div>
+        <div class="p-line">The work, run where the work happens.</div>
+        <div class="p-desc">Civil engineering and large-scale project management across North America. Finds the operational fault lines, delegates with precision, and rebuilds how projects get managed on the ground.</div>
+      </div>
+      <div class="pillar reveal">
+        <div class="p-no">03</div>
+        <div class="p-name">Global Growth &amp; Networks</div>
+        <div class="p-person">Tommy</div>
+        <div class="p-line">The right room, on every continent.</div>
+        <div class="p-desc">Strategic advisory with reach across the globe. Secures the strongest deals, sharpens a company's influence, and strengthens its financial health through a network of real weight.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision" id="vision">
+  <div class="wrap">
+    <div class="label reveal">Vision</div>
+    <h2 class="h2 reveal">Projects don't fail in the build. They fail in the gaps. <span>We work the gaps.</span></h2>
+    <p class="lede reveal">A missed clause. A material order that slips. A dispute that festers. A document no one can find. High-value work breaks at the seams between people, paper and decisions &mdash; not in the execution itself. BPH Collective is the layer that holds those seams together. Operational and legal, in one structure, from first handshake to final close.</p>
+    <div class="vision-stats">
+      <div class="stat reveal"><div class="n">One layer</div><div class="d">People, documents, contracts and opportunities. One coordinated structure. No blind spots.</div></div>
+      <div class="stat reveal"><div class="n">Ground to structure</div><div class="d">Field operations meet legal strategy &mdash; the exact point where most projects lose control.</div></div>
+      <div class="stat reveal"><div class="n">Built to last</div><div class="d">Foundations made to outlive the deal, and to compound across the work that follows.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="visual" id="visual-2">
+  <div class="bg" data-src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=2000&q=80"></div>
+  <div class="wrap reveal">
+    <div class="v-tag">Momentum</div>
+    <div class="v-title">Between meetings is where the real work happens.</div>
+    <div class="v-sub">Moving between institutions, partners and sites &mdash; the connective tissue of every serious project.</div>
+  </div>
+</div>
+
+<section class="framework" id="framework">
+  <div class="wrap">
+    <div class="label reveal">Framework</div>
+    <h2 class="h2 reveal">Four disciplines, one coordinated system.</h2>
+    <p class="lede reveal">Each layer answers a specific point of failure in complex work. Together they form the infrastructure that keeps a project coherent &mdash; operationally, legally and financially.</p>
+    <div class="grid-4">
+      <div class="card reveal"><div class="idx">01</div><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16"/></svg></div><h3>Project Coordination</h3><p>A live operating picture of every initiative &mdash; owners, dependencies, milestones and movement &mdash; so nothing advances in the dark and nothing slips through the gaps on the ground.</p></div>
+      <div class="card reveal"><div class="idx">02</div><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v5h5"/><path d="M16 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M9 13h6M9 17h4"/></svg></div><h3>Contract Flow</h3><p>Agreements tracked across their full lifecycle &mdash; drafted, negotiated, executed and monitored &mdash; with obligations, risk and deadlines surfaced before they turn into disputes.</p></div>
+      <div class="card reveal"><div class="idx">03</div><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="4" cy="11" r="2"/><circle cx="20" cy="11" r="2"/></svg></div><h3>Partner Network</h3><p>An intentionally small network of operators, advisors and partners &mdash; mapped by capability, relationship and reliability &mdash; connecting the right people to the right work, worldwide.</p></div>
+      <div class="card reveal"><div class="idx">04</div><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg></div><h3>Document Intelligence</h3><p>The critical record of a project &mdash; organised, connected and searchable &mdash; so the knowledge behind the work is retained, accessible and never trapped in one place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="caps-section" id="capabilities">
+  <div class="wrap">
+    <div class="label reveal">Track Record</div>
+    <h2 class="h2 reveal">Deployed. Anonymised. Real.</h2>
+    <p class="lede reveal">Drawn from the partners' work across construction, industry and cross-border business. No names, no numbers &mdash; that's the discretion the work demands. The disciplines are the proof.</p>
+    <div class="caps">
+      <div class="cap reveal">
+        <div class="c-no">01</div>
+        <div class="c-main">
+          <h3>Cross-Border Logistics &amp; Material Sourcing</h3>
+          <p>Procurement routed across jurisdictions. Suppliers vetted, lead times compressed, customs and incoterms structured so the steel lands when the schedule says it will. The difference between a site that moves and a site that waits.</p>
+        </div>
+        <div class="c-domain">Operations · Trade</div>
+      </div>
+      <div class="cap reveal">
+        <div class="c-no">02</div>
+        <div class="c-main">
+          <h3>High-Stakes Industrial Litigation</h3>
+          <p>Construction disputes worked from claim to resolution. Delay, defect and payment conflicts contained before they escalate, and settled on terms that protect the relationship and the balance sheet. Conflict, converted into a clean commercial position.</p>
+        </div>
+        <div class="c-domain">Legal · Dispute</div>
+      </div>
+      <div class="cap reveal">
+        <div class="c-no">03</div>
+        <div class="c-main">
+          <h3>Joint-Venture Formation &amp; Legal Safeguards</h3>
+          <p>Partnerships structured from the ground up. Governance, capital, liability and exit drafted so each side knows exactly where it stands. The safeguards that hold a deal together when the easy part is over.</p>
+        </div>
+        <div class="c-domain">Legal · Structure</div>
+      </div>
+      <div class="cap reveal">
+        <div class="c-no">04</div>
+        <div class="c-main">
+          <h3>On-the-Ground Project Management &amp; Field Execution</h3>
+          <p>Large-scale projects run where the work actually happens. Crews coordinated, fault lines found early, decisions delegated to the people who can act. Engineering discipline applied to the chaos of the field.</p>
+        </div>
+        <div class="c-domain">Operations · Field</div>
+      </div>
+    </div>
+    <div class="caps-note reveal">Detail shared under NDA, in private conversation only.</div>
+  </div>
+</section>
+
+<section class="origin" id="origin">
+  <div class="wrap">
+    <div class="origin-inner">
+      <div class="label reveal" style="justify-content:center">The Origin Story</div>
+      <div class="o-quote reveal">Three kids from Montr&eacute;al who learned to read a play before they could read a contract.</div>
+      <p class="o-body reveal">Hubert, Patrick and Tommy met on the ice more than ten years ago. Middle-class, no shortcuts, no inheritance &mdash; just the kind of trust you only build when you've been in the corner together. One went into law. One into engineering and the field. One into deals and the rooms where they get made. Different paths, same instinct: build something that lasts longer than the next contract. BPH Collective is what happens when those three forces stop working in parallel and start working as one &mdash; a private layer built to secure the work, and the future behind it.</p>
+      <div class="o-sign reveal">Montr&eacute;al &middot; Est. between friends</div>
+    </div>
+  </div>
+</section>
+
+<div class="visual" id="visual-3">
+  <div class="bg" data-src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=2000&q=80"></div>
+  <div class="wrap reveal">
+    <div class="v-tag">After hours</div>
+    <div class="v-title">Serious projects don't keep office hours.</div>
+    <div class="v-sub">Steel, concrete and the long night &mdash; the texture of work that actually gets built.</div>
+  </div>
+</div>
+
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="label reveal">The Partners</div>
+    <h2 class="h2 reveal">Three names. Ten years. One standard.</h2>
+    <p class="lede reveal">Behind the three forces are three people who have known each other longer than most companies last. The full picture, for those who want it.</p>
+    <div class="grid-3">
+      <div class="partner reveal"><div class="avatar"><img src="hubert.png" alt="Hubert — Legal Background, Structure & Strategy" loading="lazy" onerror="this.parentNode.textContent='H'"></div><h3>Hub</h3><div class="role">Legal Background &middot; Structure &amp; Strategy</div><div class="bio">Construction-litigation and dispute-resolution specialist who turns conflict into clear, secured commercial outcomes &mdash; sharpened for a market being reshaped by the rapid arrival of AI.</div></div>
+      <div class="partner reveal"><div class="avatar"><img src="patrick.png" alt="Patrick — Business & Construction Operations" loading="lazy" onerror="this.parentNode.textContent='P'"></div><h3>Pat</h3><div class="role">Business &amp; Construction Operations</div><div class="bio">Civil-engineering and large-scale project background across North America. Finds the operational fault lines on the ground, delegates with precision, and redefines how the work is managed.</div></div>
+      <div class="partner reveal"><div class="avatar"><img src="tommy.png" alt="Tommy — Business & Construction Operations" loading="lazy" onerror="this.parentNode.textContent='T'"></div><h3>Tom</h3><div class="role">Business &amp; Construction Operations</div><div class="bio">Strategic advisor connected across the globe. Secures the strongest deals, sharpens a company's influence, and strengthens its financial health through an international network of real reach.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="fields">
+  <div class="wrap">
+    <div class="label reveal">Scope</div>
+    <h2 class="h2 reveal">Built for fields where the stakes are real.</h2>
+    <p class="lede reveal">The coordination problem looks the same across industries &mdash; high value, high complexity, no room for things to fall through. We're designing for the environments where that's the daily reality.</p>
+    <div class="fields-wrap">
+      <span class="chip reveal">Construction</span>
+      <span class="chip reveal">Real Estate</span>
+      <span class="chip reveal">Operations</span>
+      <span class="chip reveal">Professional Services</span>
+      <span class="chip reveal">Technology</span>
+      <span class="chip reveal">Private Ventures</span>
+      <span class="chip reveal">Investment Projects</span>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap"><div class="cta reveal"><div class="cta-inner">
+    <h2>Private access.<br>Serious projects only.</h2>
+    <p>In development. By introduction only. If you're running something real and the picture fits, open the conversation.</p>
+    <div class="cta-row"><button class="btn btn-primary" data-apply>Apply for partnership <span class="arrow">&rarr;</span></button></div>
+  </div></div></div>
+</section>
+
+<footer>
+  <div class="wrap"><div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#top" class="brand"><span class="mark">B</span><span class="name">BPH<span> Collective</span></span></a>
+      <div class="foot-status"><span class="dot"></span> Currently in development.</div>
+      <div class="foot-loc">Montr&eacute;al <b>&middot;</b> New York <b>&middot;</b> Miami <b>&middot;</b> Global operations</div>
+    </div>
+    <div class="foot-right">
+      <a href="mailto:hello@bphcollective.com">hello@bphcollective.com</a>
+      <div class="foot-copy">BPH Collective &copy; 2026 &mdash; All rights reserved.</div>
+    </div>
+  </div></div>
+</footer>
+
+<!-- APPLY FOR PARTNERSHIP — modal tunnel -->
+<div class="modal-root" id="applyModal" role="dialog" aria-modal="true" aria-labelledby="applyTitle">
+  <div class="modal-veil" data-close></div>
+  <div class="modal">
+    <button class="modal-close" data-close aria-label="Close">&times;</button>
+
+    <div class="m-form" id="mForm">
+      <div class="m-eyebrow"><span class="dot"></span> Apply for Partnership</div>
+      <h2 id="applyTitle">A few direct questions.</h2>
+      <p class="m-sub">We review every application by hand. No forms go to a database &mdash; they go to the three of us. Be precise.</p>
+
+      <div class="m-field">
+        <label for="fCompany">Company Name &amp; Operational Jurisdiction <span class="req">*</span></label>
+        <input type="text" id="fCompany" placeholder="e.g. Meridian Industrial — Québec & NY" autocomplete="organization">
+      </div>
+
+      <div class="m-field">
+        <label for="fVolume">Estimated Annual Project Volume <span class="req">*</span></label>
+        <input type="text" id="fVolume" placeholder="e.g. $5M–$20M / 4 active sites" inputmode="text">
+      </div>
+
+      <div class="m-field">
+        <label>Current Operational Bottleneck <span class="req">*</span></label>
+        <div class="m-choices" id="fBottleneck">
+          <label class="m-choice"><input type="radio" name="bottleneck" value="Legal"><span class="tick"></span><span class="c-label">Legal<b>Disputes, contracts, structure, risk</b></span></label>
+          <label class="m-choice"><input type="radio" name="bottleneck" value="Logistics"><span class="tick"></span><span class="c-label">Logistics<b>Sourcing, materials, cross-border, execution</b></span></label>
+          <label class="m-choice"><input type="radio" name="bottleneck" value="Capital Expansion"><span class="tick"></span><span class="c-label">Capital Expansion<b>Growth, deals, networks, financing</b></span></label>
+        </div>
+      </div>
+
+      <div class="m-field">
+        <label for="fContact">Where do we reach you? <span class="req">*</span></label>
+        <input type="text" id="fContact" placeholder="Name & email" autocomplete="email">
+      </div>
+
+      <div class="m-error" id="mError">Please complete the required fields before submitting.</div>
+
+      <button class="m-submit" id="mSubmit">Submit for Review <span class="arrow">&rarr;</span></button>
+      <div class="m-foot">Reviewed privately. Most applications are declined. Selective by design.</div>
+    </div>
+
+    <div class="m-success" id="mSuccess">
+      <div class="s-ring"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h2>Submitted for review.</h2>
+      <p>Your application is in. We review every one by hand &mdash; if there's a fit, one of us will reach out directly. Discretion guaranteed either way.</p>
+      <div class="m-step">Status &middot; <b>Under review</b></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>20));
+  const menuBtn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+  menuBtn.addEventListener('click',()=>menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  document.querySelectorAll('.bg[data-src]').forEach(el=>{
+    const img=new Image();
+    img.onload=()=>{el.style.backgroundImage="url('"+el.dataset.src+"')";};
+    img.src=el.dataset.src;
+  });
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{
+      if(e.isIntersecting){
+        const els=[...e.target.parentElement.querySelectorAll('.reveal')];
+        setTimeout(()=>e.target.classList.add('in'),Math.min(els.indexOf(e.target),5)*70);
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* APPLY MODAL TUNNEL */
+  const modal=document.getElementById('applyModal');
+  const mForm=document.getElementById('mForm');
+  const mSuccess=document.getElementById('mSuccess');
+  const mError=document.getElementById('mError');
+  let lastFocus=null;
+
+  function openModal(){
+    lastFocus=document.activeElement;
+    mForm.style.display='block';mSuccess.classList.remove('show');mError.classList.remove('show');
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+    setTimeout(()=>{const f=document.getElementById('fCompany');if(f)f.focus();},400);
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+    if(lastFocus)lastFocus.focus();
+  }
+  document.querySelectorAll('[data-apply]').forEach(b=>b.addEventListener('click',(e)=>{e.preventDefault();openModal();}));
+  document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeModal));
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal();});
+
+  // ============ FORMSPREE ENDPOINT ============
+  // Replace the ID below with your own from formspree.io (Forms → your form → endpoint).
+  // It looks like: https://formspree.io/f/abcdwxyz
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  // ============================================
+
+  const mSubmitBtn=document.getElementById('mSubmit');
+
+  mSubmitBtn.addEventListener('click',async ()=>{
+    const company=document.getElementById('fCompany').value.trim();
+    const volume=document.getElementById('fVolume').value.trim();
+    const contact=document.getElementById('fContact').value.trim();
+    const bottleneckEl=document.querySelector('input[name="bottleneck"]:checked');
+    if(!company||!volume||!contact||!bottleneckEl){mError.classList.add('show');return;}
+    mError.classList.remove('show');
+    const bottleneck=bottleneckEl.value;
+
+    // loading state
+    const original=mSubmitBtn.innerHTML;
+    mSubmitBtn.disabled=true;
+    mSubmitBtn.style.opacity='0.6';
+    mSubmitBtn.innerHTML='Submitting…';
+
+    try{
+      const res=await fetch(FORMSPREE_ENDPOINT,{
+        method:'POST',
+        headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body:JSON.stringify({
+          "Company & Operational Jurisdiction":company,
+          "Estimated Annual Project Volume":volume,
+          "Current Operational Bottleneck":bottleneck,
+          "Contact":contact,
+          "_subject":"Partnership Application — "+company
+        })
+      });
+      if(res.ok){
+        mForm.style.display='none';
+        mSuccess.classList.add('show');
+      }else{
+        throw new Error('submit failed');
+      }
+    }catch(err){
+      mError.textContent='Something went wrong. Please try again, or email hello@bphcollective.com directly.';
+      mError.classList.add('show');
+      mSubmitBtn.disabled=false;
+      mSubmitBtn.style.opacity='1';
+      mSubmitBtn.innerHTML=original;
+    }
+  });
+
+</script>
+</body>
+</html>
